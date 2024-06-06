@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thread List</title>
+</head>
+<body>
+<h1>Threads List</h1>
+<dl>
+    {{range .Threads}}
+    <dt><strong>{{.Title}}</strong></dt>
+    <dd>{{.Description}}</dd>
+    <dd>
+        <form action="/threads/{{.ID}}/delete" method="POST">
+            <button type="submit">Delete</button>
+        </form>
+    </dd>
+    {{end}}
+    <a href="/threads/new">Thread create</a>
+</dl>
+</body>
+</html>
